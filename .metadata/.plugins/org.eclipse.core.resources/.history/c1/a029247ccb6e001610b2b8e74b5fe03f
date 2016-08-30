@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+
+/**
+ * @author Jasmine Carson 1st Period
+ *
+ */
+public class Calculate {
+	public static double square(double x){
+		double answer = x * x;
+		return answer;
+	}
+}

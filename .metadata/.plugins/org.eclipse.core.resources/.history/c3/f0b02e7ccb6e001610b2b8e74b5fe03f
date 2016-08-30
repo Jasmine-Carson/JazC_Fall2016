@@ -1,0 +1,13 @@
+/**
+ * @author Jasmine Carson 1st Period
+ *
+ */
+public class DoMath {
+	/** @param args*/
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double result = Calculate.square(6.0);
+		System.out.println(result);
+	}
+
+}

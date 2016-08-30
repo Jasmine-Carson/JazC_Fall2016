@@ -1,0 +1,30 @@
+/**
+ * 
+ */
+
+/**
+ * @author Jasmine Carson 1st Period
+ *
+ */
+public class Calculate {
+//square
+	public static double square(double x){
+		double answer = x * x;
+		return answer;
+	}
+//cube
+	public static double cube(double x){
+		double answer = x*x*x;
+		return answer;
+	}
+//average 2
+	public static double average(double x, double y){
+		double answer = (x + y)/2;
+		return answer;
+	}
+//average 3
+	public static double average(double x, double y, double z){
+		double answer = (x + y + z)/3;
+		return answer;
+	}
+}

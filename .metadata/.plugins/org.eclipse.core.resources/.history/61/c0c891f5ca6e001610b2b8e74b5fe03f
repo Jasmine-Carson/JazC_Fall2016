@@ -1,0 +1,12 @@
+/**
+ * @author Jasmine Carson 1st Period
+ *
+ */
+public class DoMath {
+	/** @param args*/
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double result = square(6.0);
+	}
+
+}
