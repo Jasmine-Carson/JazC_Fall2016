@@ -121,10 +121,32 @@ public class Calculate {
 	}
 //round to 2 decimal places
 	public static double round2(double x){
-		x = x*100;
+		x = (x+.005)*100;
 		int newx = (int) x;
-		x = (double) newx;
-		x = x/100;
+		x = newx/100.0;
 		return x;
+	}
+//x^y
+	public static double exponent(double x, int y){
+		int repeat=0;
+		double answer =1;
+		while(repeat<=0){
+			answer = answer*x;
+		}
+		return answer;
+	}
+//find the factorial!
+	public static int factorial(int a){
+		int answer =1;
+		for (int i=1; i<=a; i++){
+			answer = answer*i;
+		}
+		return answer;
+	}
+//is it prime?
+	public static boolean isPrime(int a){
+		boolean prime;
+		
+		return prime;
 	}
 }
