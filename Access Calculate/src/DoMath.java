@@ -6,14 +6,14 @@ public class DoMath {
 	/** @param args*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		double result = Calculate.square(6.0);
+		String answer;
+		boolean t_or_f;
+		double result = Calculate.absValue(6.0);
 		System.out.println(result);
-		result = Calculate.cube(2.0);
-		System.out.println(result);
-		result = Calculate.average(32, 6);
-		System.out.println(result);
-		result = Calculate.average(3, 12, 12);
-		System.out.println(result);
+		answer = Calculate.quadForm(1,-5,6);
+		System.out.println(answer);
+		t_or_f = Calculate.isDivisibleBy(10,5);
+		System.out.println(t_or_f);
 	}
 
 }

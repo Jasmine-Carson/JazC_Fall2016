@@ -39,7 +39,7 @@ public class Calculate {
 	}
 //discriminant
 	public static double discriminant(double a, double b, double c){
-		double answer = b*b - 4*a*c;
+		double answer = (b*b) - (4*a*c);
 		return answer;
 	}
 //mixed number to improper fraction
@@ -89,7 +89,7 @@ public class Calculate {
 			return y;
 		}
 		else{
-			return 0;
+			return x;
 		}
 	}
 //biggest of 3
@@ -104,7 +104,7 @@ public class Calculate {
 			return z;
 		}
 		else{
-			return 0;
+			return x;
 		}
 	}
 //smaller of 2
@@ -116,7 +116,7 @@ public class Calculate {
 			return y;
 		}
 		else{
-			return 0;
+			return x;
 		}
 	}
 //round to 2 decimal places
@@ -169,7 +169,43 @@ public class Calculate {
 		if (x<0){
 			return x;
 		}
-		double root = x/2;
-		double count =x;
+		double a = 1.0;
+		while(a*a>(x+.1) || a*a<(x-.1)){
+			while(a*a<x){
+				a=a+.01;
+			}
+			if (a*a>x){
+				a=a-.01;
+			}
+		}
+		return Calculate.round2(a);
+	}	
+//quadratic formula
+	public static String quadForm(int a, int b, int c){
+		if(Calculate.discriminant(a,b,c)<0){
+			return "no real roots";
+		}
+		else if(Calculate.discriminant(a,b,c)==0){
+			double answer = -b/(2*a);
+			answer = Calculate.round2(answer);
+			return(answer + "");
+		}
+		else{
+			double root1=Calculate.sqrt(Calculate.discriminant(a, b, c));
+			root1=-b+root1;
+			root1=Calculate.round2(root1/(2*a));
+			double root2=Calculate.sqrt(Calculate.discriminant(a, b, c));
+			root2=-b-root1;
+			root2=Calculate.round2(root2/(2*a));
+			if (root1<root2){
+				return (root1 + " and " + root2);
+			}
+			else if (root1 == root2){
+				return (root1+"");
+			}
+			else{
+				return (root1 + " and " + root2);
+			}
+		}
 	}
 }
