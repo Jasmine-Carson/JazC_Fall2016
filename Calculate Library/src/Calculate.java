@@ -95,6 +95,7 @@ public class Calculate {
 	}
 //biggest of 3
 	public static double max(double x, double y, double z){
+		if (x==y && x==z) throw new IllegalArgumentException("those numbers are all the same, stop being a jerk");
 		if (x>y && x>z){
 			return x;
 		}
@@ -110,6 +111,7 @@ public class Calculate {
 	}
 //smaller of 2
 	public static int min(int x, int y){
+		if(x==y) throw new IllegalArgumentException("those numbers are the same, stop being a jerk");
 		if (x<y){
 			return x;
 		}
@@ -129,6 +131,7 @@ public class Calculate {
 	}
 //x^y
 	public static double exponent(double x, int y){
+		if(y<0) throw new IllegalArgumentException("positive exponents only, don't be rude");
 		int repeat=0;
 		double answer =1;
 		while(repeat<=y){
@@ -138,6 +141,7 @@ public class Calculate {
 	}
 //find the factorial!
 	public static int factorial(int a){
+		if (a<0) throw new IllegalArgumentException("oh come on don't be rude, positive integers only");
 		int answer =1;
 		for (int i=1; i<=a; i++){
 			answer = answer*i;
@@ -146,9 +150,7 @@ public class Calculate {
 	}
 //is it prime?
 	public static boolean isPrime(int a){
-		if(a<0){
-			a=a*-1;
-		}
+		if(a<2) throw new IllegalArgumentException("it's not prime or not-prime if it's less than 2 and you should know that already");
 		boolean prime=true;
 		for(int i=2; i<a; i++){
 			if(Calculate.isDivisibleBy(a, i)==false){
@@ -159,6 +161,7 @@ public class Calculate {
 	}
 //greatest common factor
 	public static int gcf(int a, int b){
+		if(a<0 || b<0) throw new IllegalArgumentException("positive ints only, do you WANT to break the program? rude.");
 		int i=Calculate.min(a,b);
 		while(a%i!=0 && b%i!=0){
 			i--;
