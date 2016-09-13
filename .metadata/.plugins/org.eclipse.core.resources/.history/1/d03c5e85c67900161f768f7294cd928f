@@ -44,14 +44,12 @@ public class Calculate {
 	}
 //mixed number to improper fraction
 	public static String toImproperFrac(int a, int b, int c){
-		if (c==0) throw new IllegalArgumentException("you can't divide by 0 has math class taught you nothing");
 		int numerator = a*c + b;
 		String answer = numerator+"/"+c;
 		return answer;
 	}
 //improper fraction to mixed number
 	public static String toMixedNum(int a, int b){
-		if (b==0) throw new IllegalArgumentException("you can't divide by 0 has math class taught you nothing");
 		int wholeNumber = a/b;
 		int frac = b % a;
 		String answer = wholeNumber+"_"+frac+"/"+b;
@@ -66,7 +64,6 @@ public class Calculate {
 	}
 //checks divisibility
 	public static boolean isDivisibleBy(int x, int y){
-		if(y==0) throw new IllegalArgumentException("you can't divide by 0 has math class taught you nothing");
 		boolean div;
 		if (x%y==0){
 			div = true;
@@ -85,12 +82,14 @@ public class Calculate {
 	}
 //bigger of 2
 	public static int max(int x, int y){
-		if(x==y) throw new IllegalArgumentException("those numbers are the same, stop being a jerk");
 		if (x>y){
 			return x;
 		}
-		else{
+		else if (y>x){
 			return y;
+		}
+		else{
+			return x;
 		}
 	}
 //biggest of 3
@@ -167,7 +166,9 @@ public class Calculate {
 	}
 //square root
 	public static double sqrt(double x){
-		if (x<0) throw new IllegalArgumentException("input is less than 0 and we don't work with imaginaries here");
+		if (x<0){
+			return x;
+		}
 		double a = 1.0;
 		while(a*a>(x+.1) || a*a<(x-.1)){
 			while(a*a<x){

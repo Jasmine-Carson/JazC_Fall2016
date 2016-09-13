@@ -15,4 +15,5 @@ public class DoMath {
 		t_or_f = Calculate.isDivisibleBy(10,5);
 		System.out.println(t_or_f);
 	}
+
 }
