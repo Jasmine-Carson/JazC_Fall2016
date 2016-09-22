@@ -18,23 +18,23 @@ public class Calculate {
 		return answer;
 	}
 //average 2
-	public static double average(double x, double y){
-		double answer = (x + y)/2;
+	public static double average(double var1, double var2){
+		double answer = (var1 + var2)/2;
 		return answer;
 	}
 //average 3
-	public static double average(double x, double y, double z){
-		double answer = (x + y + z)/3;
+	public static double average(double var1, double var2, double var3){
+		double answer = (var1 + var2 + var3)/3;
 		return answer;
 	}
 //radians to degrees
-	public static double toDegrees(double x){
-		double answer = 180 * x / 3.14159;
+	public static double toDegrees(double rad){
+		double answer = 180 * rad / 3.14159;
 		return answer;
 	}
 //degrees to radians
-	public static double toRadians(double x){
-		double answer = 3.14159 * x / 180;
+	public static double toRadians(double deg){
+		double answer = 3.14159 * deg / 180;
 		return answer;
 	}
 //discriminant
@@ -43,32 +43,33 @@ public class Calculate {
 		return answer;
 	}
 //mixed number to improper fraction
-	public static String toImproperFrac(int a, int b, int c){
-		if (c==0) throw new IllegalArgumentException("you can't divide by 0 has math class taught you nothing");
-		int numerator = a*c + b;
-		String answer = numerator+"/"+c;
+	public static String toImproperFrac(int whole, int numerator, int denominator){
+		if (denominator==0) throw new IllegalArgumentException("you can't divide by 0 has math class taught you nothing");
+		numerator = whole*denominator + numerator;
+		String answer = numerator+"/"+denominator;
 		return answer;
 	}
 //improper fraction to mixed number
-	public static String toMixedNum(int a, int b){
-		if (b==0) throw new IllegalArgumentException("you can't divide by 0 has math class taught you nothing");
-		int wholeNumber = a/b;
-		int frac = b % a;
-		String answer = wholeNumber+"_"+frac+"/"+b;
+	public static String toMixedNum(int numerator, int denominator){
+		if (denominator==0) throw new IllegalArgumentException("you can't divide by 0 has math class taught you nothing");
+		int wholeNumber = numerator/denominator;
+		int frac = numerator % denominator;
+		String answer = wholeNumber+"_"+frac+"/"+denominator;
 		return answer;
 	}
 //makes a quadratic
 	public static String foil(int a, int b, int c, int d, String x){
+		//(ax+b)(cx+d)
 		int first = a * c;
 		int second = a *d + b * c;
 		int third = b * d;
 		return(first+x+"^2 + "+second+x+" + "+third);
 	}
 //checks divisibility
-	public static boolean isDivisibleBy(int x, int y){
-		if(y==0) throw new IllegalArgumentException("you can't divide by 0 has math class taught you nothing");
+	public static boolean isDivisibleBy(int dividend, int divisor){
+		if(divisor==0) throw new IllegalArgumentException("you can't divide by 0 has math class taught you nothing");
 		boolean div;
-		if (x%y==0){
+		if (dividend%divisor==0){
 			div = true;
 		}
 		else{
@@ -84,42 +85,42 @@ public class Calculate {
 		return x;
 	}
 //bigger of 2
-	public static int max(int x, int y){
-		if(x==y) throw new IllegalArgumentException("those numbers are the same, stop being a jerk");
-		if (x>y){
-			return x;
+	public static int max(int var1, int var2){
+		if(var1==var2) throw new IllegalArgumentException("those numbers are the same, stop being a jerk");
+		if (var1>var2){
+			return var1;
 		}
 		else{
-			return y;
+			return var2;
 		}
 	}
 //biggest of 3
-	public static double max(double x, double y, double z){
-		if (x==y && x==z) throw new IllegalArgumentException("those numbers are all the same, stop being a jerk");
-		if (x>y && x>z){
-			return x;
+	public static double max(double num1, double num2, double num3){
+		if (num1==num2 && num1==num3) throw new IllegalArgumentException("those numbers are all the same, stop being a jerk");
+		if (num1>num2 && num1>num3){
+			return num1;
 		}
-		else if (y>x && y>z){
-			return y;
+		else if (num2>num1 && num2>num3){
+			return num2;
 		}
-		else if (z>y && z>x){
-			return z;
+		else if (num3>num1 && num3>num2){
+			return num3;
 		}
 		else{
-			return x;
+			return num1;
 		}
 	}
 //smaller of 2
-	public static int min(int x, int y){
-		if(x==y) throw new IllegalArgumentException("those numbers are the same, stop being a jerk");
-		if (x<y){
-			return x;
+	public static int min(int num1, int num2){
+		if(num1==num2) throw new IllegalArgumentException("those numbers are the same, stop being a jerk");
+		if (num1<num2){
+			return num1;
 		}
-		else if (y<x){
-			return y;
+		else if (num2<num1){
+			return num2;
 		}
 		else{
-			return x;
+			return num1;
 		}
 	}
 //round to 2 decimal places
@@ -130,40 +131,43 @@ public class Calculate {
 		return x;
 	}
 //x^y
-	public static double exponent(double x, int y){
-		if(y<0) throw new IllegalArgumentException("positive exponents only, don't be rude");
+	public static double exponent(double base, int power){
+		if(power<0) throw new IllegalArgumentException("positive exponents only, don't be rude");
 		int repeat=0;
 		double answer =1;
-		while(repeat<=y){
-			answer = answer*x;
+		while(repeat<power){
+			answer = answer*base;
 		}
 		return answer;
 	}
 //find the factorial!
-	public static int factorial(int a){
-		if (a<0) throw new IllegalArgumentException("oh come on don't be rude, positive integers only");
+	public static int factorial(int num){
+		if (num<0) throw new IllegalArgumentException("oh come on don't be rude, positive integers only");
 		int answer =1;
-		for (int i=1; i<=a; i++){
+		for (int i=1; i<=num; i++){
 			answer = answer*i;
 		}
 		return answer;
 	}
 //is it prime?
-	public static boolean isPrime(int a){
-		if(a<2) throw new IllegalArgumentException("it's not prime or not-prime if it's less than 2 and you should know that already");
+	public static boolean isPrime(int num){
+		if(num<2) throw new IllegalArgumentException("it's not prime or not-prime if it's less than 2 and you should know that already");
 		boolean prime=true;
-		for(int i=2; i<a; i++){
-			if(Calculate.isDivisibleBy(a, i)==false){
+		for(int i=2; i<num; i++){
+			if(Calculate.isDivisibleBy(num, i)==false){
 				prime=false;
 			}
+		}
+		if(num==2){
+			prime=true;
 		}
 		return prime;
 	}
 //greatest common factor
-	public static int gcf(int a, int b){
-		if(a<0 || b<0) throw new IllegalArgumentException("positive ints only, do you WANT to break the program? rude.");
-		int i=Calculate.min(a,b);
-		while(a%i!=0 && b%i!=0){
+	public static int gcf(int num1, int num2){
+		if(num1<0 || num2<0) throw new IllegalArgumentException("positive ints only, do you WANT to break the program? rude.");
+		int i=Calculate.min(num1,num2);
+		while(num1%i!=0 && num2%i!=0){
 			i--;
 		}
 		return i;
