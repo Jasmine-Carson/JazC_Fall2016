@@ -1,4 +1,8 @@
 /**
+ * 
+ */
+
+/**
  * @author Jasmine Carson 1st Period
  *
  */
@@ -163,7 +167,7 @@ public class Calculate {
 	public static int gcf(int num1, int num2){
 		if(num1<0 || num2<0) throw new IllegalArgumentException("positive ints only, do you WANT to break the program? rude.");
 		int i=Calculate.min(num1,num2);
-		while(Calculate.isDivisibleBy(num1,i)==false && Calculate.isDivisibleBy(num2, i)==false){
+		while(num1%i!=0 && num2%i!=0){
 			i--;
 		}
 		return i;
