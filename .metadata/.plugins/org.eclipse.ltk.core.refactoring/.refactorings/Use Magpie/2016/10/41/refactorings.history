@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;MagpieRunner2.java&apos; to &apos;Magpie Activity 2/src/(default package)&apos;&#x0D;&#x0A;- Original project: &apos;Use Magpie&apos;&#x0D;&#x0A;- Destination element: &apos;Magpie Activity 2/src/(default package)&apos;&#x0D;&#x0A;- Original element: &apos;MagpieRunner2.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=Magpie Activity 2/src&lt;" element1="/src&lt;{MagpieRunner2.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1475596491587" units="1" version="1.0"/>
+</session>
