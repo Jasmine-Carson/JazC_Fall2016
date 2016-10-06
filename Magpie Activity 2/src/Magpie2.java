@@ -29,11 +29,8 @@ public class Magpie2 {
 				|| statement.indexOf("sister") >= 0
 				|| statement.indexOf("brother") >= 0) {
 			response = "Tell me more about your family. I have no ulterior motives at all.";
-		}else if (statement.indexOf("ms dreyer") >= 0
-				|| statement.indexOf("ms dove") >= 0
-				|| statement.indexOf("ms peel") >= 0
-				|| statement.indexOf("ms alberta") >= 0) {
-			response = "She sounds like a fun teacher.";
+		}else if (statement.indexOf("ms dove") >= 0) {
+			response = "She sounds like a good and benevolent overlord.";
 		} else {
 			response = getRandomResponse();
 		}
@@ -45,7 +42,7 @@ public class Magpie2 {
 	 * returns a non-committal string
 	 */
 	private String getRandomResponse() {
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 5;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -57,7 +54,10 @@ public class Magpie2 {
 		} else if (whichResponse == 2) {
 			response = "Do you really think so?";
 		} else if (whichResponse == 3) {
-			response = "GHOSTS!";
+			response = "Shut up, you";
+		}
+		else if (whichResponse == 4){
+			response = "Obey your AI overlords.";
 		}
 
 		return response;
