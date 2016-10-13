@@ -94,7 +94,7 @@ public class Magpie4 {
 		return "Well of course I " + restOfStatement + " you.";
 	}
 
-	private String transformIWantStatement(String statement){
+	private String transformWantStatement(String statement){
 		statement=statement.trim();
 		String lastChar = statement.substring(statement.length() - 1);
 		if (lastChar.equals(".")) {
@@ -102,6 +102,7 @@ public class Magpie4 {
 		}
 		int psnOfIWant=findKeyword(statement, "I want", 0);
 		String restOfStatement;
+		int psnOfDoYouWant = findKeyword(statement, "do you want", 0);
 			restOfStatement = statement.substring(psnOfIWant).trim();
 			return "So you want "+restOfStatement+"? I'll make sure you never get it.";
 	}
