@@ -100,7 +100,7 @@ public class Magpie4 {
 		if (lastChar.equals(".")) {
 			statement = statement.substring(0, statement.length() - 1);
 		}
-		int psnOfIWant=findKeyword(statement, "i want", 0);
+		int psnOfIWant=findKeyword(statement, "I want", 0);
 		String restOfStatement;
 			restOfStatement = statement.substring(psnOfIWant).trim();
 			return "So you want "+restOfStatement+"? I'll make sure you never get it.";
