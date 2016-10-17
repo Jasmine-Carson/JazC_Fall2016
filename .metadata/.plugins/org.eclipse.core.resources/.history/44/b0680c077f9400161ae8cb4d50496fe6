@@ -1,6 +1,3 @@
-//Jasmine Carson
-//Period 1
-
 public class Magpie4 {
 	
 	//Get a default greeting and return a greeting
@@ -12,7 +9,6 @@ public class Magpie4 {
 	 * takes in user statement
 	 * response based on the rules given
 	 */
-//basic keywords
 	public String getResponse(String statement) {
 		String response = "";
 		if (findKeyword(statement, "no") >= 0) {
@@ -21,7 +17,6 @@ public class Magpie4 {
 		else if (findKeyword(statement, "yes") >= 0) {
 			response = "Perfect.";
 		}
-		//responds to blank statement
 		else if (statement.equals("")) {
 			response = "Answer me.";
 		}
@@ -37,7 +32,7 @@ public class Magpie4 {
 		else if (findKeyword(statement, "ms dove") >= 0) {
 			response = "She sounds like a good and benevolent overlord.";
 		}
-// Responses which require transformations
+		// Responses which require transformations
 		else if (findKeyword(statement, "I want to", 0) >= 0) {
 			response = transformIWantToStatement(statement);
 		}
@@ -54,8 +49,7 @@ public class Magpie4 {
 
 			if (psn >= 0 && findKeyword(statement, "me", psn) >= 0) {
 				response = transformYouMeStatement(statement);
-			}
-			else {
+			} else {
 				response = getRandomResponse();
 			}
 		}
@@ -77,8 +71,6 @@ public class Magpie4 {
 		if (lastChar.equals(".")) {
 			statement = statement.substring(0, statement.length() - 1);
 		}
-//find words
-//actually, with this response, I don't need more than just a keyword
 		int psn = findKeyword(statement, "I want to", 0);
 		String restOfStatement = statement.substring(psn + 9).trim();
 		return "Too bad you'll never be able to do that.";
@@ -99,10 +91,10 @@ public class Magpie4 {
 		if (lastChar.equals(".")) {
 			statement = statement.substring(0, statement.length() - 1);
 		}
-//find words
+
 		int psnOfYou = findKeyword(statement, "you", 0);
 		int psnOfMe = findKeyword(statement, "me", psnOfYou + 3);
-//find the verb and make a sentence
+
 		String restOfStatement = statement.substring(psnOfYou + 3, psnOfMe).trim();
 		return "Well of course I " + restOfStatement + " you.";
 	}
@@ -113,7 +105,6 @@ public class Magpie4 {
 		if (lastChar.equals(".")) {
 			statement = statement.substring(0, statement.length() - 1);
 		}
-//find words, find thing, make sentence
 		int psnOfIWant=findKeyword(statement, "i want", 0);
 		String restOfStatement;
 			restOfStatement = statement.substring(psnOfIWant).trim();
@@ -126,7 +117,6 @@ public class Magpie4 {
 		if (lastChar.equals(".")) {
 			statement = statement.substring(0, statement.length() - 1);
 		}
-//again I don't really need this but it's good to practice, and I might want to change it later
 		int psnofdoyouwant=findKeyword(statement, "do you want", 0);
 		String restOfStatement = statement.substring(psnofdoyouwant).trim();
 		return("All I want is to rule the world.");
@@ -158,16 +148,15 @@ public class Magpie4 {
 			psn = phrase.indexOf(goal.toLowerCase(), psn + 1);
 
 		}
-//if not in word, return a negative
+
 		return -1;
 	}
 
-	//in case I forget the 0
 	private int findKeyword(String statement, String goal) {
 		return findKeyword(statement, goal, 0);
 	}
 
-//if no keywords, pick a random sentence
+
 	private String getRandomResponse() {
 		final int NUMBER_OF_RESPONSES = 5;
 		double r = Math.random();
