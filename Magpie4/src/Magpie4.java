@@ -116,7 +116,7 @@ public class Magpie4 {
 //find words, find thing, make sentence
 		int psnOfIWant=findKeyword(statement, "i want", 0);
 		String restOfStatement;
-			restOfStatement = statement.substring(psnOfIWant).trim();
+			restOfStatement = statement.substring(psnOfIWant+6).trim();
 			return "So you want "+restOfStatement+"? I'll make sure you never get it.";
 	}
 	
