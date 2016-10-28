@@ -20,7 +20,7 @@ public class LotsOfCopies {
 		int[] a = {3, 4, 5};
 		int[] b = a;
 		a[1]= 26;
-		System.out.println(Arrays.toString(b));
+		System.out.println(b);
 	}
 	public static void changeMe(int x, String str, int[] arr){
 		x++;

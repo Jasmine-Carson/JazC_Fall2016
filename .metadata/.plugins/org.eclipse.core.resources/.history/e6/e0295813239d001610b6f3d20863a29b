@@ -9,22 +9,15 @@ public class LotsOfCopies {
 		System.out.println(strMain);
 		System.out.println(Arrays.toString(arrMain));
 		System.out.println();
-		
 		changeMe(num, strMain, arrMain);
-		
 		System.out.println(num);
 		System.out.println(strMain);
 		System.out.println(Arrays.toString(arrMain));
 		System.out.println();
-		
-		int[] a = {3, 4, 5};
-		int[] b = a;
-		a[1]= 26;
-		System.out.println(Arrays.toString(b));
 	}
 	public static void changeMe(int x, String str, int[] arr){
 		x++;
-		str = str.substring(0,str.length()-2);
+		str = str.substring(0,str.length()-3);
 		arr[1]=8;
 	}
 }

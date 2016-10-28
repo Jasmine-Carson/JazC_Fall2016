@@ -17,10 +17,10 @@ public class LotsOfCopies {
 		System.out.println(Arrays.toString(arrMain));
 		System.out.println();
 		
-		int[] a = {3, 4, 5};
-		int[] b = a;
-		a[1]= 26;
-		System.out.println(Arrays.toString(b));
+		int a = 5;
+		int b = a;
+		a = 6;
+		System.out.println(b);
 	}
 	public static void changeMe(int x, String str, int[] arr){
 		x++;
