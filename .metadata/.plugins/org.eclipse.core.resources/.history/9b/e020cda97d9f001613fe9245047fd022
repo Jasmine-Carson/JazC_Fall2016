@@ -21,8 +21,6 @@ public class LotsOfCopies {
 		int[] b = a;
 		a[1]= 26;
 		System.out.println(Arrays.toString(b));
-		b[2] = 0;
-		System.out.println(Arrays.toString(a));
 	}
 	public static void changeMe(int x, String str, int[] arr){
 		x++;
