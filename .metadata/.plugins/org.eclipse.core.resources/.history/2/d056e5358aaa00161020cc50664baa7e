@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Checkpoint2 {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String statement = input.nextLine();
+		while (!statement.equals("quit")){
+			System.out.println(produceAnswer(statement));
+			statement = input.nextLine();
+		}	
+	}
+	
+	public static String produceAnswer(String str){
+		String numerator;
+		String denominator;
+		String whole;
+		if(str.indexOf("+")>0){
+			str = str.substring(str.indexOf(" + ")+3);
+		}
+		else if(str.indexOf(" - ")>0){
+			str = str.substring(str.indexOf(" - ")+3);
+		}
+		else if(str.indexOf("*")>0){
+			str = str.substring(str.indexOf(" * ")+3);
+		}
+		else if(str.indexOf(" / ")>0){
+			str = str.substring(str.indexOf(" / ")+3);
+		}
+		if (str.indexOf(" ")>0){
+			if(str.indexOf("/")>0){
+				numerator = str.substring(str.indexOf(" ")+1, str.indexOf("/"));
+				denominator = str.substring(str.indexOf("/")+1);
+			}
+			else{
+				numerator = "0";
+				denominator = "1";
+				whole = str;
+			}
+		}
+		return ("whole number:"+whole+" numerator:"+numerator+" denominator:"+denominator);
+	}
+}
