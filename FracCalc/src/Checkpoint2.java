@@ -47,6 +47,6 @@ public class Checkpoint2 {
 				whole = str;
 			}
 		}
-		return ("whole number:"+whole+" numerator:"+numerator+" denominator:"+denominator);
+		return ("whole:"+whole+" numerator:"+numerator+" denominator:"+denominator);
 	}
 }

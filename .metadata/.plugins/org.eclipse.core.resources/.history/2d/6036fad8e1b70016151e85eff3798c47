@@ -1,5 +1,5 @@
 package fracCalc;
-//check2
+//check1
 import java.util.Scanner;
 
 public class FracCalc {
@@ -50,7 +50,7 @@ public class FracCalc {
 				whole = str;
 			}
 		}
-		return ("whole:"+whole+" numerator:"+numerator+" denominator:"+denominator);
+		return ("whole number:"+whole+" numerator:"+numerator+" denominator:"+denominator);
 	}
 
     // TODO: Fill in the space below with any helper methods that you think you will need

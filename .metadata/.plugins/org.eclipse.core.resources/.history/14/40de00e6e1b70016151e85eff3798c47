@@ -1,5 +1,5 @@
 package fracCalc;
-//check2
+//check1
 import java.util.Scanner;
 
 public class FracCalc {

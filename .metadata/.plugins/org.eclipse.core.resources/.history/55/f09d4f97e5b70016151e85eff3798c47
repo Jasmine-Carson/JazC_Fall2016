@@ -4,10 +4,7 @@ public class Checkpoint3 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		String statement = input.nextLine();
-		while (!statement.equals("quit")){
-			System.out.println(produceAnswer(statement));
-			statement = input.nextLine();
-		}	
+		System.out.println(produceAnswer(statement));
 	}
 	
 	
@@ -35,14 +32,6 @@ public class Checkpoint3 {
 		int denom1 = Integer.parseInt(improp1.substring(improp1.indexOf("/")+1));
 		int num2 = Integer.parseInt(improp2.substring(0, improp2.indexOf("/")));
 		int denom2 = Integer.parseInt(improp2.substring(improp2.indexOf("/")+1));
-		
-		if (firstOp[0]<0){
-			num1 = -num1;
-		}
-		if (secondOp[0]<0){
-			num2 = -num2;
-		}
-		
 		if(str.indexOf("+")>0){
 			answer = add(num1, denom1, num2, denom2);
 		}
