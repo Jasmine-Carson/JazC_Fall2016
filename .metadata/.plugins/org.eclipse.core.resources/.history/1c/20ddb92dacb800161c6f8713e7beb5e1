@@ -1,9 +1,6 @@
-package fracCalc;
-//check3/final
 import java.util.Scanner;
 
-public class FracCalc {
-
+public class Checkpoint3 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		String statement = input.nextLine();
@@ -12,6 +9,7 @@ public class FracCalc {
 			statement = input.nextLine();
 		}	
 	}
+	
 	
 	public static String produceAnswer(String str){
 		String op1 = str.substring(0, str.indexOf(" "));
@@ -58,9 +56,6 @@ public class FracCalc {
 		else if(Calculate.isDivisibleBy(answerparts[0], answerparts[1])==true){
 			int ans = answerparts[0] / answerparts[1];
 			answer = ans+"";
-		}
-		else{
-			answer = reduce(answerparts[0], answerparts[1]);
 		}
 		
 		return answer;
@@ -153,11 +148,6 @@ public class FracCalc {
 		}
 		num = num/gcf;
 		denom = denom/gcf;
-		if (denom == 1){
-			return (num+"");
-		}
-		else{
-			return (num+"/"+denom);
-		}
-	}    
+		return (num+"/"+denom);
+	}
 }

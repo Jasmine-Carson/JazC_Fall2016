@@ -1,5 +1,5 @@
 package fracCalc;
-//check3/final
+//check2
 import java.util.Scanner;
 
 public class FracCalc {
@@ -159,5 +159,8 @@ public class FracCalc {
 		else{
 			return (num+"/"+denom);
 		}
-	}    
+	}
+
+    // TODO: Fill in the space below with any helper methods that you think you will need
+    
 }

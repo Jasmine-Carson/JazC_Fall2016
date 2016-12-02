@@ -1,9 +1,6 @@
-package fracCalc;
-//check3/final
 import java.util.Scanner;
 
-public class FracCalc {
-
+public class Checkpoint3 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		String statement = input.nextLine();
@@ -12,6 +9,7 @@ public class FracCalc {
 			statement = input.nextLine();
 		}	
 	}
+	
 	
 	public static String produceAnswer(String str){
 		String op1 = str.substring(0, str.indexOf(" "));
@@ -153,11 +151,6 @@ public class FracCalc {
 		}
 		num = num/gcf;
 		denom = denom/gcf;
-		if (denom == 1){
-			return (num+"");
-		}
-		else{
-			return (num+"/"+denom);
-		}
-	}    
+		return (num+"/"+denom);
+	}
 }
