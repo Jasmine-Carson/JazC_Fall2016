@@ -52,16 +52,8 @@ public class FracCalc {
 			answerparts = divide(num1, denom1, num2, denom2);
 		}
 		
-		if(answerparts[0] == 0){
-			answer = "0";
-		}
-		else if(Calculate.isDivisibleBy(answerparts[0], answerparts[1])==true){
-			int ans = answerparts[0] / answerparts[1];
-			answer = ans+"";
-		}
-		else{
-			answer = reduce(answerparts[0], answerparts[1]);
-		}
+		answer = answerparts[0]+"/"+answerparts[1];
+
 		
 		return answer;
 	}
@@ -146,18 +138,5 @@ public class FracCalc {
 		return answer;
 	}
 	
-	public static String reduce(int num, int denom){
-		int gcf = Calculate.min(num, denom);
-		while(num%gcf != 0 && denom%gcf != 0 && gcf>0){
-			gcf--;
-		}
-		num = num/gcf;
-		denom = denom/gcf;
-		if (denom == 1){
-			return (num+"");
-		}
-		else{
-			return (num+"/"+denom);
-		}
-	}    
+	    
 }

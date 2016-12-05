@@ -41,6 +41,10 @@ public class Checkpoint3 {
 			answerparts = add(num1, denom1, num2, denom2);
 		}
 		else if(str.indexOf(" - ")>0){
+			if (num2<0){
+				num2 = -num2;
+				answerparts = add(num1, denom1, num2, denom2);
+			}
 			answerparts = subtract(num1, denom1, num2, denom2);
 		}
 		else if(str.indexOf("*")>0){
@@ -51,14 +55,15 @@ public class Checkpoint3 {
 		}
 		
 		if(answerparts[0] == 0){
-			answer = "0";
+			answer = ("0");
 		}
 		else if(Calculate.isDivisibleBy(answerparts[0], answerparts[1])==true){
 			int ans = answerparts[0] / answerparts[1];
 			answer = ans+"";
 		}
 		else{
-			answer = reduce(answerparts[0], answerparts[1]);
+			int [] mixednumtime = reduce(answerparts[0], answerparts[1]);
+			answer = Calculate.toMixedNum(mixednumtime[0], mixednumtime[1]);
 		}
 		
 		return answer;
@@ -144,18 +149,14 @@ public class Checkpoint3 {
 		return answer;
 	}
 	
-	public static String reduce(int num, int denom){
+	public static int[] reduce(int num, int denom){
 		int gcf = Calculate.min(num, denom);
-		while(num%gcf != 0 && denom%gcf != 0 && gcf>0){
+		while(num%gcf != 0 && denom%gcf != 0 && gcf>1){
 			gcf--;
 		}
 		num = num/gcf;
 		denom = denom/gcf;
-		if (denom == 1){
-			return (num+"");
-		}
-		else{
-			return (num+"/"+denom);
-		}
+		int[] answer = {num, denom};
+		return answer;
 	}
 }
