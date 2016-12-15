@@ -2,8 +2,6 @@
 //APCS 1st Period
 import java.util.*;
 
-//3,5,1,8,2,7,0 5,7,8,7,5,5,3,8,7,3,7,7,8,8,0 3,3,1,2,2,7,5,7,0 5,7,4,1,3,8,7,6,4,6,0 1,2,3,5,3,8,1,8,5,7,0
-
 public class ACSLLand {
 	public static void main(String[] args){
 		//construct
@@ -35,7 +33,7 @@ public class ACSLLand {
 					roll = input.nextInt();
 				}
 			}
-			System.out.println("A-"+A.toString()+", B-"+B.toString());
+			
 		}
 	}
 }

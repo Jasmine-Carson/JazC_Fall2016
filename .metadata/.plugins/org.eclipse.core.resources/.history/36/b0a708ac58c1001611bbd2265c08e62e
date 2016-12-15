@@ -38,16 +38,4 @@ public class Player {
 	public int getLocation(){
 		return location;
 	}
-	//for printing
-	public String toString(){
-		if (this.atEnd){
-			return("END");
-		}
-		else if (this.location == 0){
-			return("START");
-		}
-		else{
-			return(""+this.location);
-		}
-	}
 }

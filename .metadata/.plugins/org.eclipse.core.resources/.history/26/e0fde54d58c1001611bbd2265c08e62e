@@ -1,0 +1,19 @@
+//Jasmine Carson
+//APCS 1st Period
+import java.util.*;
+
+public class ACSLLand {
+	public static void main(String[] args){
+		Scanner input = new Scanner(System.in);
+		Player A = new Player();
+		Player B = new Player();
+		for (int i = 1; i<=5; i++){
+			int roll = input.nextInt();
+			while(roll!=0 && A.getEnd()==false && B.getEnd()==false){
+				if(roll>0){
+					
+				}
+			}
+		}
+	}
+}
